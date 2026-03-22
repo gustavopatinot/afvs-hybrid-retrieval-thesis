@@ -6,6 +6,19 @@ __pycache__/
 # C extensions
 *.so
 
+# Large or generated data/artifacts
+data/raw/*
+!data/raw/README.md
+
+data/interim/*
+!data/interim/README.md
+
+data/processed/*
+!data/processed/README.md
+
+reports/logs/*
+!reports/logs/README.md
+
 # Distribution / packaging
 .Python
 build/
@@ -154,6 +167,10 @@ venv.bak/
 # mkdocs documentation
 /site
 
+# ML experiment tracking
+mlruns/
+wandb/
+
 # mypy
 .mypy_cache/
 .dmypy.json
@@ -200,6 +217,10 @@ cython_debug/
 #  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
 .cursorindexingignore
+
+# Temporary files
+*.tmp
+*.log
 
 # Marimo
 marimo/_static/
