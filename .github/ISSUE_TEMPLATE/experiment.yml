@@ -1,0 +1,131 @@
+name: Experiment
+description: Register a baseline, proposed method, ablation, benchmark, or error analysis experiment.
+title: "[EXP] "
+labels:
+  - experiment
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form for any experiment that should be tracked and linked to thesis claims.
+
+  - type: input
+    id: experiment_id
+    attributes:
+      label: Experiment ID
+      placeholder: "exp_001"
+    validations:
+      required: true
+
+  - type: textarea
+    id: objective
+    attributes:
+      label: Experiment objective
+      placeholder: |
+        Example:
+        Compare static pre-filtering and post-filtering baselines under different filter selectivity levels.
+    validations:
+      required: true
+
+  - type: textarea
+    id: hypothesis
+    attributes:
+      label: Hypothesis being tested
+      placeholder: |
+        Example:
+        The adaptive strategy will improve recall stability relative to static strategies while maintaining acceptable latency.
+    validations:
+      required: true
+
+  - type: textarea
+    id: baselines
+    attributes:
+      label: Baselines
+      placeholder: |
+        - Static pre-filtering
+        - Static post-filtering
+        - Dense retrieval without adaptive policy
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed_method
+    attributes:
+      label: Proposed method or variant
+      placeholder: |
+        Example:
+        Adaptive policy that chooses search strategy based on filter selectivity and workload features.
+    validations:
+      required: true
+
+  - type: textarea
+    id: datasets
+    attributes:
+      label: Datasets and workload definition
+      placeholder: |
+        - Dataset(s)
+        - Query set
+        - Metadata fields
+        - Workload conditions
+    validations:
+      required: true
+
+  - type: textarea
+    id: metrics
+    attributes:
+      label: Metrics
+      placeholder: |
+        - recall@k
+        - precision@k
+        - latency_ms
+        - recall stability
+        - constrained query success rate
+    validations:
+      required: true
+
+  - type: input
+    id: notebook
+    attributes:
+      label: Notebook path
+      placeholder: "notebooks/02_baseline_static_search.ipynb"
+    validations:
+      required: true
+
+  - type: input
+    id: config_file
+    attributes:
+      label: Experiment config file
+      placeholder: "experiments/exp_001_static_baselines.yaml"
+    validations:
+      required: true
+
+  - type: input
+    id: expected_artifact
+    attributes:
+      label: Expected result artifact
+      placeholder: "reports/tables/exp_001_results.csv"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: reproducibility
+    attributes:
+      label: Reproducibility status
+      options:
+        - Pending
+        - Partial
+        - Verified
+    validations:
+      required: true
+
+  - type: dropdown
+    id: trl_target
+    attributes:
+      label: TRL target supported by this experiment
+      options:
+        - TRL2
+        - TRL3
+        - TRL4
+        - TRL5
+    validations:
+      required: true

@@ -1,0 +1,95 @@
+name: Writing Section
+description: Draft or revise a thesis section linked to evidence, experiments, or literature synthesis.
+title: "[WRITING] "
+labels:
+  - writing
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form for thesis writing tasks only.
+        Every section must be linked to evidence.
+
+  - type: input
+    id: file_path
+    attributes:
+      label: Target file path
+      placeholder: "docs/05_methodology.md"
+    validations:
+      required: true
+
+  - type: input
+    id: section_name
+    attributes:
+      label: Section name
+      placeholder: "3.2 Experimental Design"
+    validations:
+      required: true
+
+  - type: textarea
+    id: section_goal
+    attributes:
+      label: Goal of the section
+      placeholder: |
+        Explain what this section must achieve academically.
+    validations:
+      required: true
+
+  - type: textarea
+    id: claims
+    attributes:
+      label: Main claims or points to cover
+      placeholder: |
+        - What must be stated
+        - What must be justified
+        - What must not be omitted
+    validations:
+      required: true
+
+  - type: textarea
+    id: required_evidence
+    attributes:
+      label: Required evidence
+      placeholder: |
+        - Papers
+        - PRISMA outputs
+        - Experiments
+        - Tables
+        - Figures
+    validations:
+      required: true
+
+  - type: textarea
+    id: done_criteria
+    attributes:
+      label: Definition of done
+      placeholder: |
+        Example:
+        Section is complete when method, baselines, datasets, metrics, and reproducibility logic are described and linked to supporting artifacts.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: chapter
+    attributes:
+      label: Thesis chapter
+      options:
+        - C1
+        - C2
+        - C3
+        - C4
+        - C5
+        - Appendix
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - High
+        - Medium
+        - Low
+    validations:
+      required: true

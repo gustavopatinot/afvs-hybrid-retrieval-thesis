@@ -1,0 +1,116 @@
+name: Literature Review
+description: Create or revise a literature review task, PRISMA element, study matrix item, or research gap synthesis.
+title: "[LITERATURE] "
+labels:
+  - literature
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form for literature search, screening, synthesis, and gap identification.
+        If relevant, keep PRISMA logic explicit.
+
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective of this literature task
+      description: What exactly must be achieved?
+      placeholder: |
+        Example:
+        Build the search equation for filtered vector search and hybrid retrieval.
+    validations:
+      required: true
+
+  - type: textarea
+    id: concepts
+    attributes:
+      label: Core concepts and keywords
+      description: List the main concepts, synonyms, and alternate terms.
+      placeholder: |
+        - filtered vector search
+        - filtered ANN
+        - hybrid retrieval
+        - metadata constraints
+        - stable recall
+    validations:
+      required: true
+
+  - type: textarea
+    id: search_equation
+    attributes:
+      label: Search equation
+      description: Add the Boolean or database-ready search string if available.
+      placeholder: |
+        ("filtered vector search" OR "filtered ANN" OR "hybrid nearest neighbor")
+        AND (retrieval OR database OR index)
+    validations:
+      required: false
+
+  - type: textarea
+    id: inclusion
+    attributes:
+      label: Inclusion criteria
+      placeholder: |
+        - Peer-reviewed or strong preprint
+        - Relevant to filtered/hybrid vector search
+        - Reports methods, systems, or benchmarks
+    validations:
+      required: true
+
+  - type: textarea
+    id: exclusion
+    attributes:
+      label: Exclusion criteria
+      placeholder: |
+        - Purely generic RAG application note
+        - No evaluation
+        - Duplicated result
+    validations:
+      required: true
+
+  - type: textarea
+    id: prisma_stage
+    attributes:
+      label: PRISMA stage
+      description: Identification, screening, eligibility, inclusion, or synthesis.
+      placeholder: |
+        Example: Screening
+    validations:
+      required: true
+
+  - type: textarea
+    id: studies_or_outputs
+    attributes:
+      label: Studies reviewed or expected output
+      description: List papers, tables, matrices, or synthesis outputs linked to this task.
+      placeholder: |
+        - Study matrix row updates
+        - Gap synthesis note
+        - PRISMA flow counts
+    validations:
+      required: true
+
+  - type: textarea
+    id: gap_relevance
+    attributes:
+      label: Relevance to research gap
+      description: Explain how this review task helps define or test the thesis gap.
+      placeholder: |
+        Example:
+        This task supports the methodological gap on stable recall under workload-varying filtered search.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: chapter
+    attributes:
+      label: Thesis chapter
+      options:
+        - C1
+        - C2
+        - C3
+        - C4
+        - C5
+        - Appendix
+    validations:
+      required: true

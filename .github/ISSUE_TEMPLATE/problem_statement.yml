@@ -1,0 +1,108 @@
+name: Problem Statement
+description: Create or revise the thesis problem statement using ideal state, problem state, and consequences.
+title: "[PROBLEM] "
+labels:
+  - problem
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form to define the problem rigorously.
+        Structure the issue around:
+        1. Ideal state
+        2. Problem state
+        3. Consequences
+        4. Evidence
+        5. Main and specific research questions
+
+  - type: textarea
+    id: ideal_state
+    attributes:
+      label: Ideal state
+      description: Describe how the situation, process, or system should work if the problem did not exist.
+      placeholder: |
+        Example:
+        A hybrid retrieval system should return semantically relevant and structurally valid results under metadata constraints, with stable recall and controlled latency.
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem_state
+    attributes:
+      label: Problem state
+      description: Describe the gap between the ideal state and the current reality.
+      placeholder: |
+        Example:
+        Static filtered vector search strategies behave inconsistently under varying workloads, filter selectivity, and metadata quality.
+    validations:
+      required: true
+
+  - type: textarea
+    id: consequences
+    attributes:
+      label: Consequences
+      description: Explain what happens if the problem is not addressed.
+      placeholder: |
+        Include technical, scientific, operational, or organizational consequences.
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence supporting the problem
+      description: Cite corpus documents, benchmarks, observations, or other supporting evidence.
+      placeholder: |
+        - Paper X reports...
+        - Survey Y identifies...
+        - Preliminary observation...
+    validations:
+      required: true
+
+  - type: textarea
+    id: main_question
+    attributes:
+      label: Main research question
+      description: Write one clear, researchable main question.
+      placeholder: |
+        Example:
+        Does an adaptive filtered vector search strategy improve recall stability and maintain controlled latency compared with static strategies in hybrid enterprise/RAG retrieval workloads?
+    validations:
+      required: true
+
+  - type: textarea
+    id: specific_questions
+    attributes:
+      label: Specific research questions
+      description: Add 3 to 5 specific questions.
+      placeholder: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: chapter
+    attributes:
+      label: Thesis chapter
+      options:
+        - C1
+        - C2
+        - C3
+        - C4
+        - C5
+        - Appendix
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - High
+        - Medium
+        - Low
+    validations:
+      required: true

@@ -1,0 +1,77 @@
+name: Advisor Correction
+description: Register a supervisor/advisor correction and convert it into an actionable tracked item.
+title: "[REVIEW] "
+labels:
+  - review
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form when your advisor, committee, or reviewer asks for corrections.
+
+  - type: textarea
+    id: correction_text
+    attributes:
+      label: Correction or review comment
+      placeholder: |
+        Paste the correction exactly as received.
+    validations:
+      required: true
+
+  - type: input
+    id: source
+    attributes:
+      label: Source of correction
+      placeholder: "Advisor meeting 1 / email / committee review"
+    validations:
+      required: true
+
+  - type: input
+    id: affected_file
+    attributes:
+      label: Affected file or section
+      placeholder: "docs/04_state_of_the_art.md"
+    validations:
+      required: true
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact assessment
+      placeholder: |
+        Explain whether the correction affects the problem, literature review, hypothesis, methodology, results, or writing only.
+    validations:
+      required: true
+
+  - type: textarea
+    id: action_plan
+    attributes:
+      label: Action plan
+      placeholder: |
+        - What will be changed
+        - What evidence is needed
+        - What issue/experiment/section is affected
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      options:
+        - High
+        - Medium
+        - Low
+    validations:
+      required: true
+
+  - type: dropdown
+    id: status
+    attributes:
+      label: Initial status
+      options:
+        - Ready
+        - In Progress
+        - Blocked
+    validations:
+      required: true
