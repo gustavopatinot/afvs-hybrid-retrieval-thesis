@@ -1,0 +1,43 @@
+name: docs-check
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  required-docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Verify required thesis docs exist
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          required = [
+              "README.md",
+              "docs/01_problem_statement.md",
+              "docs/02_research_questions.md",
+              "docs/03_objectives_hypotheses.md",
+              "docs/04_state_of_the_art.md",
+              "docs/05_methodology.md",
+              "references/search_strategy.md",
+              "references/inclusion_exclusion_criteria.md",
+              "references/prisma_flow.md",
+              "experiments/registry.md",
+          ]
+
+          missing = [p for p in required if not Path(p).exists()]
+          if missing:
+              print("Missing required files:")
+              for p in missing:
+                  print(f" - {p}")
+              raise SystemExit(1)
+
+          print("All required files are present.")
+          PY
