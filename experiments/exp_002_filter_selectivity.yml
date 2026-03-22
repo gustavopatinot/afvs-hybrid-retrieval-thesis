@@ -1,0 +1,50 @@
+experiment_id: exp_002
+title: Filter selectivity analysis
+status: planned
+
+objective: >
+  Measure how retrieval quality and latency change as filter selectivity varies.
+
+linked_issue: ""
+linked_pr: ""
+linked_thesis_sections:
+  - docs/05_methodology.md
+  - docs/06_results.md
+
+datasets:
+  - name: ""
+    source: ""
+    notes: ""
+
+workload:
+  description: >
+    Controlled workload with varying metadata selectivity levels.
+  selectivity_levels:
+    - low
+    - medium
+    - high
+
+baselines:
+  - name: static_pre_filter
+  - name: static_post_filter
+
+proposed_method: null
+
+metrics:
+  - recall_at_k
+  - precision_at_k
+  - latency_ms
+  - recall_stability
+
+reproducibility:
+  seed: 42
+  python_version: "3.11"
+  notebook: notebooks/03_filtered_search_analysis.ipynb
+  output_table: reports/tables/exp_002_results.csv
+  output_figure: reports/figures/exp_002_selectivity.png
+
+trl:
+  current: TRL2
+  target_supported: TRL3
+
+notes: ""

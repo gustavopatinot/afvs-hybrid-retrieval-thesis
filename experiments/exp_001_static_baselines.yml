@@ -1,0 +1,51 @@
+experiment_id: exp_001
+title: Static filtered-search baselines
+status: planned
+
+objective: >
+  Compare static pre-filtering and post-filtering baselines for hybrid enterprise/RAG retrieval.
+
+linked_issue: ""
+linked_pr: ""
+linked_thesis_sections:
+  - docs/05_methodology.md
+  - docs/06_results.md
+
+datasets:
+  - name: ""
+    source: ""
+    notes: ""
+
+workload:
+  description: ""
+  query_groups:
+    - low_selectivity
+    - medium_selectivity
+    - high_selectivity
+
+baselines:
+  - name: static_pre_filter
+    description: Filter first, then retrieve
+  - name: static_post_filter
+    description: Retrieve first, then filter
+
+proposed_method: null
+
+metrics:
+  - recall_at_k
+  - precision_at_k
+  - latency_ms
+  - constrained_query_success_rate
+
+reproducibility:
+  seed: 42
+  python_version: "3.11"
+  notebook: notebooks/02_baseline_static_search.ipynb
+  output_table: reports/tables/exp_001_results.csv
+  output_figure: reports/figures/exp_001_plot.png
+
+trl:
+  current: TRL2
+  target_supported: TRL3
+
+notes: ""

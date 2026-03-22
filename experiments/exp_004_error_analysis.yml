@@ -1,0 +1,47 @@
+experiment_id: exp_004
+title: Error analysis
+status: planned
+
+objective: >
+  Analyze failure cases for static and adaptive strategies under difficult hybrid retrieval conditions.
+
+linked_issue: ""
+linked_pr: ""
+linked_thesis_sections:
+  - docs/06_results.md
+  - docs/07_discussion.md
+
+datasets:
+  - name: ""
+    source: ""
+    notes: ""
+
+workload:
+  description: >
+    Focused subset of difficult cases, including highly selective filters and incomplete metadata.
+
+baselines:
+  - name: static_pre_filter
+  - name: static_post_filter
+
+proposed_method:
+  name: adaptive_policy
+
+metrics:
+  - failure_count
+  - false_positive_patterns
+  - false_negative_patterns
+  - latency_outliers
+
+reproducibility:
+  seed: 42
+  python_version: "3.11"
+  notebook: notebooks/05_final_tables_figures.ipynb
+  output_table: reports/tables/exp_004_error_analysis.csv
+  output_figure: reports/figures/exp_004_error_patterns.png
+
+trl:
+  current: TRL3
+  target_supported: TRL4
+
+notes: ""
