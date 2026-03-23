@@ -1,0 +1,14 @@
+numpy
+pandas
+scipy
+scikit-learn
+matplotlib
+pyyaml
+jupyter
+ipykernel
+faiss-cpu
+sentence-transformers
+mlflow
+wandb
+pytest
+ruff
